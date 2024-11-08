@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import './styles.css';
+
+
 
 const EditarFuncionario = ({ funcionarioId }) => {
     const [funcionario, setFuncionario] = useState({
@@ -12,7 +13,9 @@ const EditarFuncionario = ({ funcionarioId }) => {
     useEffect(() => {
         const carregarFuncionario = async () => {
             try {
-                const resposta = await axios.get(`http://localhost:8000/funcionarios/${funcionarioId}`);
+                const resposta = await axios.
+                get
+                (`http://localhost:6969/funcionarios/buscar/${funcionarioId}`);
                 setFuncionario(resposta.data); 
             } catch (error) {
                 console.error('Erro ao carregar dados do funcionário:', error);
@@ -33,10 +36,11 @@ const EditarFuncionario = ({ funcionarioId }) => {
 
         const jsonData = {
             nome,
-            email
+            email,
+            matricula
         };
 
-        const url = `http://localhost:8000/funcionarios/editar/${funcionarioId}`;
+        const url = `http://localhost:6969/funcionarios/editar/${funcionarioId}`;
 
         try {
             const resposta = await axios.put(url, jsonData);

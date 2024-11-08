@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
-import './styles.css';
+
 
 const RemoverFuncionario = () => {
     const [nome, setNome] = useState('');
