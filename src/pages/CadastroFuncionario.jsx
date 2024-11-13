@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Cadastro = ({ funcionarioId }) => {
+const Cadastro = () => {
     const [cadastrarFuncionario, setCadastrarFuncionario] = useState({
         nome: '',
         matricula: '',
@@ -20,7 +20,7 @@ const Cadastro = ({ funcionarioId }) => {
 
         const jsonData = { nome, matricula, email };
 
-        const url = `http://localhost:6969/funcionarios/cadastrar/${funcionarioId}`;
+        const url = `http://localhost:6969/funcionarios/cadastrar`;
 
         try {
             const resposta = await axios.post(url, jsonData);

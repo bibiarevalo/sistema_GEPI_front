@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-
-
 const EditarFuncionario = ({ funcionarioId }) => {
     const [funcionario, setFuncionario] = useState({
         nome: '',
@@ -10,13 +8,12 @@ const EditarFuncionario = ({ funcionarioId }) => {
         email: ''
     });
 
+    
     useEffect(() => {
         const carregarFuncionario = async () => {
             try {
-                const resposta = await axios.
-                get
-                (`http://localhost:6969/funcionarios/buscar/${funcionarioId}`);
-                setFuncionario(resposta.data); 
+                const resposta = await axios.get(`http://localhost:6969/funcionarios/buscar/${funcionarioId}`);
+                setFuncionario(resposta.data);
             } catch (error) {
                 console.error('Erro ao carregar dados do funcionário:', error);
                 alert('Erro ao carregar os dados do funcionário.');
@@ -28,16 +25,18 @@ const EditarFuncionario = ({ funcionarioId }) => {
         }
     }, [funcionarioId]);
 
+    
     const editarFuncionarioHandler = async (e) => {
         e.preventDefault();
 
         const nome = e.target.nome.value;
         const email = e.target.email.value;
 
+        
         const jsonData = {
             nome,
             email,
-            matricula
+            matricula: funcionario.matricula 
         };
 
         const url = `http://localhost:6969/funcionarios/editar/${funcionarioId}`;
@@ -46,11 +45,10 @@ const EditarFuncionario = ({ funcionarioId }) => {
             const resposta = await axios.put(url, jsonData);
             if (resposta.status === 200) {
                 alert('Funcionário atualizado com sucesso!');
+                setFuncionario(resposta.data);
             } else {
                 alert('Erro ao editar o funcionário.');
             }
-
-            setFuncionario(resposta.data);
         } catch (error) {
             console.error('Erro ao editar funcionário:', error);
             alert('Erro ao editar o funcionário, tente novamente.');
