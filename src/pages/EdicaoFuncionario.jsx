@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 const EditarFuncionario = ({ funcionarioId }) => {
     const [funcionario, setFuncionario] = useState({
         nome: '',
-        matricula: '',
+        matricula: 0,
         email: ''
     });
 
-    
+
     useEffect(() => {
         const carregarFuncionario = async () => {
             try {
@@ -25,21 +25,23 @@ const EditarFuncionario = ({ funcionarioId }) => {
         }
     }, [funcionarioId]);
 
-    
+
     const editarFuncionarioHandler = async (e) => {
         e.preventDefault();
 
         const nome = e.target.nome.value;
         const email = e.target.email.value;
 
-        
+
         const jsonData = {
             nome,
             email,
-            matricula: funcionario.matricula 
+            matricula: Number(funcionario.matricula)
         };
 
-        const url = `http://localhost:6969/funcionarios/editar/${funcionarioId}`;
+        console.log(jsonData)
+
+        const url = `http://localhost:6969/funcionarios/editar/${jsonData.matricula}`;
 
         try {
             const resposta = await axios.put(url, jsonData);
@@ -73,12 +75,11 @@ const EditarFuncionario = ({ funcionarioId }) => {
 
                 <div className="form-group">
                     <label htmlFor="matricula">Matrícula:</label>
-                    <input
-                        type="text"
-                        name="matricula"
-                        id="matricula"
-                        value={funcionario.matricula}
-                        readOnly
+
+
+                    <input type="number"
+                        onChange={(e) => funcionario.matricula = e.target.value}
+                        required
                     />
                 </div>
 

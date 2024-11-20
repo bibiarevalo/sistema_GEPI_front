@@ -7,8 +7,8 @@ import './index.css'
 
 const paginas = createBrowserRouter([
   { path: '/', element: <CadastroFuncionario /> },
-  { path: '/excluir/:id', element: <ExclusaoFuncionario /> },
-  { path: '/edicao/:id', element: <EdicaoFuncionario /> },
+  { path: '/excluir', element: <ExclusaoFuncionario /> },
+  { path: '/edicao', element: <EdicaoFuncionario /> },
 ])
 
 createRoot(document.getElementById('root')).render(
