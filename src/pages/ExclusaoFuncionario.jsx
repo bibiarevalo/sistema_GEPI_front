@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
 
-
 const RemoverFuncionario = () => {
     const [nome, setNome] = useState('');
     const [matricula, setMatricula] = useState('');
@@ -10,15 +9,10 @@ const RemoverFuncionario = () => {
     const removerFuncionarioHandler = async (e) => {
         e.preventDefault();
 
-        const jsonData = {
-            nome,
-            matricula
-        };
-
-        const url = 'http://localhost:8000/funcionarios/remover';
+        const url = `http://localhost:6969/funcionarios/remover/${matricula}`;
 
         try {
-            const resposta = await axios.post(url, jsonData);
+            const resposta = await axios.delete(url);
 
             if (resposta.status === 200) {
                 setStatus('Funcionário removido com sucesso!');
