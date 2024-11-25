@@ -102,7 +102,7 @@ const CadastroEpi = () => {
                 </div>
 
                 <div className="form-group">
-                    <button type="submit">Cadastrar Funcionário</button>
+                    <button type="submit">Cadastrar EPI</button>
                 </div>
             </form>
         </div>
