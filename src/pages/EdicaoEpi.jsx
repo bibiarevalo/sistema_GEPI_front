@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react';
 const EditarEpi = ({ epiId }) => {
     const [epi, setEpi] = useState({
         nome: '',
-        matricula: 0,
-        email: ''
+        tipo: '',
+        quantidade: '',
+        id: ''
     });
 
 
@@ -30,18 +31,20 @@ const EditarEpi = ({ epiId }) => {
         e.preventDefault();
 
         const nome = e.target.nome.value;
-        const email = e.target.email.value;
+        const tipo = e.target.tipo.value;
+        const quantidade = e.target.quantidade.value
 
 
         const jsonData = {
             nome,
-            email,
-            matricula: Number(epi.matricula)
+            tipo,
+            quantidade,
+            id: Number(epi.id)
         };
 
         console.log(jsonData)
 
-        const url = `http://localhost:6969/epis/editar/${jsonData.matricula}`;
+        const url = `http://localhost:6969/epis/editar/${jsonData.id}`;
 
         try {
             const resposta = await axios.put(url, jsonData);
@@ -63,7 +66,7 @@ const EditarEpi = ({ epiId }) => {
 
             <form onSubmit={editarEpiHandler}>
                 <div className="form-group">
-                    <label htmlFor="nome">Nome:</label>
+                    <label htmlFor="nome">Nome do Epi:</label>
                     <input
                         type="text"
                         name="nome"
@@ -74,22 +77,31 @@ const EditarEpi = ({ epiId }) => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="matricula">Matrícula:</label>
-
-
+                    <label htmlFor="id">numero de Identificação do Epi:</label>    
                     <input type="number"
-                        onChange={(e) => epi.matricula = e.target.value}
+                        onChange={(e) => epi.id = e.target.value}
                         required
                     />
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="email">E-mail:</label>
+                    <label htmlFor="email">tipo:</label>
                     <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        defaultValue={epi.email}
+                        type="text"
+                        name="tipo"
+                        id="tipo"
+                        defaultValue={epi.tipo}
+                        required
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="quantidade">quantidade:</label>
+                    <input
+                        type="text"
+                        name="quantidade"
+                        id="quantidade"
+                        defaultValue={epi.quantidade}
                         required
                     />
                 </div>
