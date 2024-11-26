@@ -6,7 +6,7 @@ import EdicaoFuncionario from './pages/EdicaoFuncionario'
 import CadastroEpi from './pages/CadastroEpi'
 import EditarEpi from './pages/EdicaoEpi'
 import ExclusaoEpi from './pages/ExclusaoEpi'
-// import RegistroTransacao from './pages/RegistroTransacao'
+import RegistroTransacao from './pages/RegistroTransacao'
 import './index.css'
 
 const paginas = createBrowserRouter([
