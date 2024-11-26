@@ -5,14 +5,16 @@ import ExclusaoFuncionario from './pages/ExclusaoFuncionario'
 import EdicaoFuncionario from './pages/EdicaoFuncionario'
 import CadastroEpi from './pages/CadastroEpi'
 import EditarEpi from './pages/EdicaoEpi'
+import ExclusaoEpi from './pages/ExclusaoEpi'
 import './index.css'
 
 const paginas = createBrowserRouter([
   { path: '/', element: <CadastroFuncionario /> },
   { path: '/excluir', element: <ExclusaoFuncionario /> },
   { path: '/edicao', element: <EdicaoFuncionario /> },
-  {path: '/cadastroEpi', element:<CadastroEpi/>},
-   {path: '/edicaoEpi', element:<EditarEpi/>},
+  { path: '/cadastroEpi', element: <CadastroEpi /> },
+  { path: '/edicaoEpi', element: <EditarEpi /> },
+  { path: '/excluirEpi', element: <ExclusaoEpi /> },
 ])
 
 createRoot(document.getElementById('root')).render(
