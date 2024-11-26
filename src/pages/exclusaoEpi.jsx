@@ -5,8 +5,9 @@ const ExclusaoEpi = () => {
     const [tipo, setTipo] = useState('');
     const [id, setId] = useState('');
     const [quantidade, setQuantidade] = useState('');
+    const [status, setStatus] = useState('');
 
-    const removerFuncionarioHandler = async (e) => {
+    const removerEpiHandler = async (e) => {
         e.preventDefault();
 
         const url = `http://localhost:6969/epis/remover/${id}`;
@@ -14,23 +15,24 @@ const ExclusaoEpi = () => {
         try {
             const resposta = await axios.delete(url);
 
-            if (resposta.quantidade === 200) {
-                setQuantidade('Funcionário removido com sucesso!');
+            if (resposta.status === 200) {
+                setStatus('Epi removida com sucesso!');
                 setTipo('');
                 setId('');
+                setQuantidade('')
             } else {
-                setQuantidade('Erro ao remover o funcionário.');
+                setStatus('Erro ao remover Epi.');
             }
         } catch (error) {
-            console.error("Erro ao remover funcionário:", error);
-            setQuantidade('Erro ao remover o funcionário, tente novamente.');
+            console.error("Erro ao remover Epi:", error);
+            setStatus('Erro ao remover Epi, tente novamente.');
         }
     };
 
     return (
         <div className="form-container">
-            <h1>Remover Funcionário</h1>
-            <form onSubmit={removerFuncionarioHandler}>
+            <h1>Remover Epi</h1>
+            <form onSubmit={removerEpiHandler}>
 
 
                 <div className="form-group">
@@ -76,7 +78,7 @@ const ExclusaoEpi = () => {
                 </div>
             </form>
 
-            {quantidade && <p>{quantidade}</p>}
+            {status && <p>{status}</p>}
         </div>
     );
 };
