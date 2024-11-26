@@ -26,7 +26,7 @@ const Cadastro = () => {
             const resposta = await axios.post(url, jsonData);
             console.log(resposta);
 
-            
+
             if (resposta.status === 201) {
                 alert('Funcionário cadastrado com sucesso!');
                 setCadastrarFuncionario({ nome: '', matricula: '', email: '' });
@@ -54,37 +54,37 @@ const Cadastro = () => {
             <form onSubmit={cadastrarFuncionarioHandler}>
                 <div className="form-group">
                     <label htmlFor="matricula">Matrícula:</label>
-                    <input 
-                        type="text" 
-                        id="matricula" 
-                        name="matricula" 
+                    <input
+                        type="text"
+                        id="matricula"
+                        name="matricula"
                         value={cadastrarFuncionario.matricula}
                         onChange={handleInputChange}
-                        required 
+                        required
                     />
                 </div>
 
                 <div className="form-group">
                     <label htmlFor="nome">Nome:</label>
-                    <input 
-                        type="text" 
-                        id="nome" 
-                        name="nome" 
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
                         value={cadastrarFuncionario.nome}
                         onChange={handleInputChange}
-                        required 
+                        required
                     />
                 </div>
 
                 <div className="form-group">
                     <label htmlFor="email">E-mail:</label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
                         value={cadastrarFuncionario.email}
                         onChange={handleInputChange}
-                        required 
+                        required
                     />
                 </div>
 
