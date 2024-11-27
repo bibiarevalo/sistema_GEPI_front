@@ -9,6 +9,7 @@ import ExclusaoEpi from './pages/ExclusaoEpi'
 import Gerenciamento from './pages/Gerenciamento'
 import RegistroTransacao from './pages/RegistroTransacao'
 import './index.css'
+import Historico from './pages/Historico'
 
 const paginas = createBrowserRouter([
   { path: '/', element: <CadastroFuncionario /> },
@@ -17,8 +18,9 @@ const paginas = createBrowserRouter([
   { path: '/cadastroEpi', element: <CadastroEpi /> },
   { path: '/edicaoEpi', element: <EditarEpi /> },
   { path: '/excluirEpi', element: <ExclusaoEpi /> },
-  { path: '/Gerenciamento', element: <Gerenciamento /> },
+  { path: '/gerenciamento', element: <Gerenciamento /> },
   { path: '/registro', element: <RegistroTransacao /> },
+  { path: '/historico', element: <Historico /> },
 
 ])
 
