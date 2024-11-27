@@ -6,7 +6,7 @@ const RegistroTransacao = () => {
         funcionario_matricula: '',
         data: '',
         epi_id: '',
-        acao: '', // Adicionado o campo de ação
+        acao: '',
     });
 
     const registrarTransacaoEpiHandler = async (e) => {
