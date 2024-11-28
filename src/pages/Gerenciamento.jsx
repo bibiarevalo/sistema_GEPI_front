@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";  // Importando o Link do react-router-dom
+import { Link } from "react-router-dom";
 
 const Gerenciamento = () => {
     const [epis, setEpis] = useState([]);
@@ -45,7 +45,7 @@ const Gerenciamento = () => {
                 <div>
                     <Link to="/" style={navButtonStyle}>Home</Link> {/* Usando Link para redirecionamento */}
                     <Link to="/Gerenciamento" style={navButtonStyle}>Funcionários</Link>
-                    <button to="/ajuda" style={navButtonStyle}>Ajuda</button> 
+                    <button to="/ajuda" style={navButtonStyle}>Ajuda</button>
                 </div>
             </header>
 
