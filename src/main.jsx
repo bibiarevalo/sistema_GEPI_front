@@ -12,6 +12,7 @@ import Repositor from './pages/Repositor'
 import Gerencia from './pages/Gerencia'
 import Home from './pages/home'
 import './index.css'
+import Historico from './pages/Historico'
 
 const paginas = createBrowserRouter([
   { path: '/', element: <CadastroFuncionario /> },
@@ -25,6 +26,7 @@ const paginas = createBrowserRouter([
   { path: '/home', element: <Home /> },
   { path: '/repositor', element: <Repositor /> },
   { path: '/gerencia', element: <Gerencia /> },
+  { path: '/historico', element: <Historico /> },
 
 ])
 
