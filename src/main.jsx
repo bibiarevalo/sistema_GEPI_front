@@ -13,6 +13,8 @@ import Gerencia from './pages/Gerencia'
 import Home from './pages/home'
 import './index.css'
 import Historico from './pages/Historico'
+import RegisterForm from './pages/RegistrarUsuario'
+import LoginUsuario from './pages/LoginUsuario'
 
 const paginas = createBrowserRouter([
   { path: '/', element: <CadastroFuncionario /> },
@@ -27,6 +29,8 @@ const paginas = createBrowserRouter([
   { path: '/repositor', element: <Repositor /> },
   { path: '/gerencia', element: <Gerencia /> },
   { path: '/historico', element: <Historico /> },
+  { path: '/signin', element: <RegisterForm /> },
+  { path: '/login', element: <LoginUsuario /> },
 
 ])
 
