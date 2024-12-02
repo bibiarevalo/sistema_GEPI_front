@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Repositor = () => {
   const [formData, setFormData] = useState({
@@ -76,9 +77,9 @@ const Repositor = () => {
             >
               Voltar
             </button>
-            <button type="submit" style={styles.buttonPrimary}>
-              Próximo
-            </button>
+            <Link to="/gerenciamento">
+            <button style={styles.buttonPrimary}>Próximo</button>
+          </Link>
             <button
               type="button"
               onClick={() => navigate("/login")}
