@@ -31,7 +31,7 @@ const Home = () => {
     <div style={styles.profilesContainer}>
       <div style={styles.profile}>
         <h3>Repositor</h3>
-        <Link to="/Repositor">
+        <Link to="/loginRepositor">
           <button
             style={styles.profileButton}
             onMouseEnter={(e) => e.target.style.backgroundColor = styles.profileButtonHover.backgroundColor}
@@ -44,7 +44,7 @@ const Home = () => {
 
       <div style={styles.profile}>
         <h3>Gerência</h3>
-        <Link to="/Gerencia">
+        <Link to="/LoginGerente">
           <button
             style={styles.profileButton}
             onMouseEnter={(e) => e.target.style.backgroundColor = styles.profileButtonHover.backgroundColor}
