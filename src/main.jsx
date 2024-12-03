@@ -8,13 +8,13 @@ import EditarEpi from './pages/EdicaoEpi'
 import ExclusaoEpi from './pages/ExclusaoEpi'
 import Gerenciamento from './pages/Gerenciamento'
 import RegistroTransacao from './pages/RegistroTransacao'
-import Repositor from './pages/Repositor'
-import Gerencia from './pages/Gerencia'
 import Home from './pages/home'
 import './index.css'
 import Historico from './pages/Historico'
-import RegisterForm from './pages/RegistrarUsuario'
-import LoginUsuario from './pages/LoginUsuario'
+import LoginGerente from './pages/LoginGerente'
+import LoginRepositor from './pages/LoginRepositor'
+import RegistrarRepositor from './pages/RegistrarRepositor'
+import RegistrarGerente from './pages/RegistroGerente'
 
 const paginas = createBrowserRouter([
   { path: '/', element: <CadastroFuncionario /> },
@@ -26,12 +26,11 @@ const paginas = createBrowserRouter([
   { path: '/gerenciamento', element: <Gerenciamento /> },
   { path: '/registro', element: <RegistroTransacao /> },
   { path: '/home', element: <Home /> },
-  { path: '/repositor', element: <Repositor /> },
-  { path: '/gerencia', element: <Gerencia /> },
   { path: '/historico', element: <Historico /> },
-  { path: '/signin', element: <RegisterForm /> },
-  { path: '/login', element: <LoginUsuario /> },
-
+  { path: '/LoginGerente', element: <LoginGerente /> },
+  { path: '/loginRepositor', element: <LoginRepositor /> },
+  { path: '/registrarRepositor', element: <RegistrarRepositor /> },
+  { path: '/registrarGerente', element: <RegistrarGerente /> },
 ])
 
 createRoot(document.getElementById('root')).render(
