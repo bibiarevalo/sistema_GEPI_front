@@ -48,7 +48,7 @@ const Historico = () => {
                     <tbody>
                         {historico.map((registro, index) => (
                             <tr key={index}>
-                                {/* <td>{registro.Funcionario.nome}</td> */}
+                                <td>{registro.Funcionario.nome}</td>
                                 <td>{registro.Funcionario.matricula}</td>
                                 <td>{registro.Epi.nome}</td>
                                 <td>{registro.data}</td>
