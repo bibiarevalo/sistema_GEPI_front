@@ -79,7 +79,7 @@ const Gerenciamento = () => {
 
                 <div style={sectionStyle}>
                     <h2>Gerenciamento de Funcionários</h2>
-                    <Link to="/">
+                    <Link to="/cadastroFuncionario">
                         <button style={addButtonStyle}>
                             Adicionar novo Funcionário
                         </button>
@@ -113,6 +113,7 @@ const navButtonStyle = {
     borderRadius: "5px",
     cursor: "pointer",
     fontSize: "16px",
+    
 };
 
 const sectionStyle = {

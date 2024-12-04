@@ -69,8 +69,7 @@ const LoginRepositor = () => {
             <button type="button" onClick={() => navigate(-1)} style={styles.buttonSecondary}>
               Voltar
             </button>
-            <button type="submit" 
-              style={styles.buttonPrimary}>
+            <button type="submit" style={styles.buttonPrimary}>
               Login
             </button>
           </div>
@@ -95,13 +94,13 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     minHeight: "100vh",
-    backgroundColor: "#B97D7D",
+    backgroundColor: "#007f5f",
     padding: "20px",
   },
   card: {
     backgroundColor: "#fff",
     borderRadius: "8px",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
     maxWidth: "400px",
     width: "100%",
     padding: "30px",
@@ -111,6 +110,7 @@ const styles = {
     fontSize: "24px",
     fontWeight: "bold",
     marginBottom: "25px",
+    color: "#010401",
   },
   form: {
     display: "flex",
@@ -125,11 +125,12 @@ const styles = {
     fontSize: "14px",
     marginBottom: "8px",
     fontWeight: "500",
+    color: "#010401",
   },
   input: {
     width: "100%",
     padding: "12px",
-    border: "1px solid #ccc",
+    border: "1px solid #007f5f",
     borderRadius: "4px",
     fontSize: "14px",
   },
@@ -143,7 +144,7 @@ const styles = {
     marginTop: "15px",
   },
   buttonPrimary: {
-    backgroundColor: "#B97D7D",
+    backgroundColor: "#007f5f",
     color: "#fff",
     border: "none",
     borderRadius: "4px",
@@ -154,8 +155,8 @@ const styles = {
   },
   buttonSecondary: {
     backgroundColor: "#fff",
-    color: "#B97D7D",
-    border: "1px solid #B97D7D",
+    color: "#007f5f",
+    border: "1px solid #007f5f",
     borderRadius: "4px",
     padding: "12px 15px",
     cursor: "pointer",
@@ -164,7 +165,7 @@ const styles = {
   },
   buttonLink: {
     backgroundColor: "transparent",
-    color: "#B97D7D",
+    color: "#007f5f",
     border: "none",
     cursor: "pointer",
     fontSize: "14px",

@@ -23,7 +23,7 @@ body {
 
 .form-container h1 {
     font-size: 24px;
-    color: #333;
+    color: #007f5f;
     margin-bottom: 20px;
 }
 
@@ -60,7 +60,7 @@ body {
 .form-group button {
     width: 100%;
     padding: 10px;
-    background-color: #656665;
+    background-color: #007f5f;
     border: none;
     color: #ffffff;
     font-size: 16px;
@@ -70,5 +70,5 @@ body {
 }
 
 .form-group button:hover {
-    background-color: #5a5a5a;
+    background-color: #007f5f;
 }
