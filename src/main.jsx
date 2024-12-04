@@ -17,7 +17,7 @@ import RegistrarRepositor from './pages/RegistrarRepositor'
 import RegistrarGerente from './pages/RegistroGerente'
 
 const paginas = createBrowserRouter([
-  { path: '/', element: <CadastroFuncionario /> },
+  { path: '/cadastro', element: <CadastroFuncionario /> },
   { path: '/excluir', element: <ExclusaoFuncionario /> },
   { path: '/edicao', element: <EdicaoFuncionario /> },
   { path: '/cadastroEpi', element: <CadastroEpi /> },
