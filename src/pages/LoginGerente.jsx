@@ -25,7 +25,7 @@ const LoginGerente = () => {
       const result = await response.json();
       if (response.ok) {
         alert(result.message || 'Login realizado com sucesso!');
-        navigate('/historico');  // esperar pagina de historico
+        navigate('/historico');  
       } else {
         alert(result.error || 'Erro no login do gerente.');
       }

@@ -110,7 +110,7 @@ const RegistroTransacao = () => {
                 <button onClick={() => handleAcaoChange('Retirar')}>Retirar</button>
             </div>
             <div>
-                <button onClick={() => handleAcaoChange('Retorno')}>Retorno</button>
+                <button onClick={() => handleAcaoChange('Devolver')}>Devolver</button>
             </div>
         </div>
     );

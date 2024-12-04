@@ -6,6 +6,7 @@ const Gerenciamento = () => {
     const [epis, setEpis] = useState([]);
     const [funcionarios, setFuncionarios] = useState([]);
 
+
     const fetchEpis = async () => {
         try {
             const response = await axios.get("/api/epis");
@@ -41,10 +42,14 @@ const Gerenciamento = () => {
                     borderBottom: "1px solid #ddd",
                 }}
             >
-                <div style={{ width: "40px", height: "40px", backgroundColor: "#007f5f", borderRadius: "50%" }}></div>
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/1624/1624014.png"
+                    alt="Ícone de Gerenciamento"
+                    style={{ width: "40px", height: "40px" }}
+                />
                 <div>
-                    <Link to="/" style={navButtonStyle}>Home</Link> {/* Usando Link para redirecionamento */}
-                    <Link to="/Gerenciamento" style={navButtonStyle}>Funcionários</Link>
+                    <Link to="/home" style={navButtonStyle}>Home</Link> 
+                    <Link to="/registro" style={navButtonStyle}>Registro</Link>
                     <button to="/ajuda" style={navButtonStyle}>Ajuda</button>
                 </div>
             </header>
@@ -57,20 +62,19 @@ const Gerenciamento = () => {
                             Adicionar novo EPI
                         </button>
                     </Link>
-                    <ul style={{ listStyle: "none", padding: 0 }}>
-                        {epis.length > 0 ? (
-                            epis.map((epi) => (
-                                <li key={epi.id} style={cardStyle}>
-                                    <span>{epi.nome}</span>
-                                    <Link to={`/edicaoEpi/${epi.id}`}>
-                                        <button style={editButtonStyle}>Editar</button>
-                                    </Link>
-                                </li>
-                            ))
-                        ) : (
-                            <li>Nenhum EPI encontrado</li>
-                        )}
-                    </ul>
+                    <br />
+                    <Link to="/excluirEpi">
+                        <button style={addButtonStyle}>
+                            excluir
+                        </button>
+                    </Link>
+                    <br />
+                    <Link to="/edicaoEpi">
+                        <button style={addButtonStyle}>
+                            Editar 
+                        </button>
+                    </Link>
+                  
                 </div>
 
                 <div style={sectionStyle}>
@@ -80,20 +84,20 @@ const Gerenciamento = () => {
                             Adicionar novo Funcionário
                         </button>
                     </Link>
-                    <ul style={{ listStyle: "none", padding: 0 }}>
-                        {funcionarios.length > 0 ? (
-                            funcionarios.map((funcionario) => (
-                                <li key={funcionario.id} style={cardStyle}>
-                                    <span>{funcionario.nome}</span>
-                                    <Link to={`/edicao/${funcionario.id}`}>
-                                        <button style={editButtonStyle}>Editar</button>
-                                    </Link>
-                                </li>
-                            ))
-                        ) : (
-                            <li>Nenhum Funcionário encontrado</li>
-                        )}
-                    </ul>
+                    <br />
+
+                    <Link to="/excluir">
+                        <button style={addButtonStyle}>
+                            excluir
+                        </button>
+                    </Link>
+                    <br />
+                    <Link to="/edicao">
+                        <button style={addButtonStyle}>
+                            Editar 
+                        </button>
+                    </Link>
+                 
                 </div>
             </div>
         </div>
@@ -114,7 +118,7 @@ const navButtonStyle = {
 const sectionStyle = {
     width: "45%",
     backgroundColor: "#fff",
-    padding: "20px",
+    padding: "50px",
     borderRadius: "10px",
     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
 };
@@ -134,7 +138,7 @@ const cardStyle = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "10px",
+    padding: "200px",
     margin: "10px 0",
     backgroundColor: "#f9f9f9",
     borderRadius: "5px",
