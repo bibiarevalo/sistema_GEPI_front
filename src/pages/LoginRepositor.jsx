@@ -69,7 +69,8 @@ const LoginRepositor = () => {
             <button type="button" onClick={() => navigate(-1)} style={styles.buttonSecondary}>
               Voltar
             </button>
-            <button type="submit" style={styles.buttonPrimary}>
+            <button type="submit" 
+              style={styles.buttonPrimary}>
               Login
             </button>
           </div>
