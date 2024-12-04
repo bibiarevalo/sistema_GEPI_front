@@ -63,6 +63,14 @@ const RegistroTransacao = () => {
         <div className="form-container">
             <h1>Registrar Transação de EPI</h1>
 
+            <h1 style={{color: '#010401'}}>Ação</h1>
+            <div className="form-group">
+                <button onClick={() => handleAcaoChange('Retirar')}>Retirar</button>
+            </div>
+            <div className="form-group">
+                <button onClick={() => handleAcaoChange('Devolver')}>Devolver</button>
+            </div>
+
             <form onSubmit={registrarTransacaoEpiHandler}>
                 <div className="form-group">
                     <label htmlFor="funcionario_matricula">Funcionário Matrícula:</label>
@@ -105,13 +113,7 @@ const RegistroTransacao = () => {
                 </div>
             </form>
 
-            <h1>Ação</h1>
-            <div>
-                <button onClick={() => handleAcaoChange('Retirar')}>Retirar</button>
-            </div>
-            <div>
-                <button onClick={() => handleAcaoChange('Devolver')}>Devolver</button>
-            </div>
+            
         </div>
     );
 };

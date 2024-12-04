@@ -32,31 +32,18 @@ const Historico = () => {
     return (
         <div style={styles.container}>
             <header style={styles.header}>
-                <h1>Histórico</h1>
+                <h1 style={styles.title}>Histórico</h1>
             </header>
-            <div style={styles.tableContainer}>
-                <table style={styles.table}>
-                    <thead>
-                        <tr>
-                            <th>Nome do Funcionário</th>
-                            <th>Matrícula</th>
-                            <th>Nome do EPI</th>
-                            <th>Data</th>
-                            <th>Ação</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {historico.map((registro, index) => (
-                            <tr key={index}>
-                                <td>{registro.Funcionario.nome}</td>
-                                <td>{registro.Funcionario.matricula}</td>
-                                <td>{registro.Epi.nome}</td>
-                                <td>{registro.data}</td>
-                                <td>{registro.acao}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+            <div style={styles.cardContainer}>
+                {historico.map((registro, index) => (
+                    <div key={index} style={styles.card}>
+                        <p><strong>Nome do Funcionário:</strong> {registro.Funcionario.nome}</p>
+                        <p><strong>Matrícula:</strong> {registro.Funcionario.matricula}</p>
+                        <p><strong>Nome do EPI:</strong> {registro.Epi.nome}</p>
+                        <p><strong>Data:</strong> {registro.data}</p>
+                        <p><strong>Ação:</strong> {registro.acao}</p>
+                    </div>
+                ))}
             </div>
         </div>
     );
@@ -75,26 +62,24 @@ const styles = {
     header: {
         marginBottom: '20px',
     },
-    tableContainer: {
-        width: '80%',
-        overflowX: 'auto',
+    title: {
+        fontSize: '24px',
+        fontWeight: 'bold',
+        color: '#007f5f',
     },
-    table: {
+    cardContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '20px',
         width: '100%',
-        borderCollapse: 'collapse',
-        textAlign: 'left',
-        backgroundColor: '#fff',
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        maxWidth: '800px',
     },
-    th: {
-        padding: '15px 20px', 
-        backgroundColor: '#343a40',
+    card: {
+        backgroundColor: '#007f5f',
         color: '#fff',
-        borderBottom: '2px solid #dee2e6',
-    },
-    td: {
-        padding: '15px 10px', 
-        borderBottom: '1px solid #dee2e6',
+        borderRadius: '8px',
+        padding: '20px',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
     },
 };
 

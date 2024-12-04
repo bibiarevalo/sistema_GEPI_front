@@ -81,7 +81,7 @@ const styles = {
     padding: '10px 20px',
     marginTop: '10px',
     cursor: 'pointer',
-    backgroundColor: '#007BFF',
+    backgroundColor: '#007f5f',
     color: 'white',
     border: 'none',
     borderRadius: '5px',
@@ -89,7 +89,7 @@ const styles = {
     transition: 'background-color 0.3s',
   },
   profileButtonHover: {
-    backgroundColor: '#0056b3',
+    backgroundColor: '#295d19',
   },
 };
 
