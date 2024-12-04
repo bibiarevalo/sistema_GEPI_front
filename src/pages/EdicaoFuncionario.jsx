@@ -77,7 +77,7 @@ const EditarFuncionario = ({ funcionarioId }) => {
                     <label htmlFor="matricula">Matrícula:</label>
 
 
-                    <input type="number"
+                    <input type="number" id='matricula'
                         onChange={(e) => funcionario.matricula = e.target.value}
                         required
                     />
