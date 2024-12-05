@@ -78,7 +78,7 @@ const EditarEpi = ({ epiId }) => {
 
                 <div className="form-group">
                     <label htmlFor="id">numero de Identificação do Epi:</label>    
-                    <input type="number"
+                    <input type="number" id='id'
                         onChange={(e) => epi.id = e.target.value}
                         required
                     />
